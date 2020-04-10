@@ -28,19 +28,19 @@ public class SimpleFragment extends Fragment {
     /**
      * Creates the view for the fragment.
      *
-     * @param inflater           LayoutInflater
-     * @param container          ViewGroup
-     * @param savedInstanceState Bundle
-     * @return View
+     * @param inflater           LayoutInflater to inflate any views in the fragment
+     * @param container          ViewGroup of parent view to attach fragment
+     * @param savedInstanceState Bundle for previous state
+     * @return rootView
      */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment.
         final View rootView = inflater.inflate(R.layout.fragment_simple,
                 container, false);
         final RadioGroup radioGroup = rootView.findViewById(R.id.radio_group);
-        final RatingBar ratingBar = rootView.findViewById(R.id.ratingBar);
 
         // Set the radioGroup onCheckedChanged listener.
         radioGroup.setOnCheckedChangeListener(
@@ -65,20 +65,11 @@ public class SimpleFragment extends Fragment {
                     }
                 });
 
-        ratingBar.setOnRatingBarChangeListener
-                (new RatingBar.OnRatingBarChangeListener() {
-                    @Override
-                    public void onRatingChanged(RatingBar ratingBar,
-                                                float rating, boolean fromUser) {
-                        // Get rating and show Toast with rating.
-                        String myRating = (getString(R.string.my_rating) +
-                                ratingBar.getRating());
-                        Toast.makeText(getContext(), myRating,
-                                Toast.LENGTH_SHORT).show();
-                    }
-                });
-
         // Return the View for the fragment's UI.
         return rootView;
+    }
+
+    public static SimpleFragment newInstance() {
+        return new SimpleFragment();
     }
 }
