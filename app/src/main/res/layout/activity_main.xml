@@ -15,13 +15,12 @@
   ~ limitations under the License.
   -->
 
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.fragmentexample2.MainActivity">
+    tools:context="com.example.android.fragmentcommunicate.MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -34,7 +33,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/beatles_anthology_box"
-        android:contentDescription="@string/image"/>
+        android:contentDescription="@string/image" />
 
     <TextView
         android:id="@+id/title"
@@ -82,7 +81,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_simple"/>
+        tools:layout="@layout/fragment_simple" />
 
     <Button
         android:id="@+id/open_button"
@@ -94,16 +93,5 @@
         android:text="@string/open"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"/>
-    <Button
-        android:id="@+id/nextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/next"
-        android:onClick="onNextClick"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/open_button"
-        android:layout_marginLeft="8dp" />
 
 </android.support.constraint.ConstraintLayout>
